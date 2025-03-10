@@ -58,13 +58,13 @@ export function OrderModal({
     <Overlay onClick={handleOverlayClick}>
       <ModalBody>
         <header>
-          <strong>Mesa - {order.table}</strong>
+          <strong>Table - {order.table}</strong>
           <button type="button" onClick={onClose}>
             <img src={closeIcon} alt="close X icon svg" />
           </button>
         </header>
         <div className="status-container">
-          <small>Status do Pedido</small>
+          <small>Order Status</small>
           <div>
             <span>
               {order.status === 'WAITING' && '🕒'}
@@ -72,14 +72,14 @@ export function OrderModal({
               {order.status === 'DONE' && '✅'}
             </span>
             <strong>
-              {order.status === 'WAITING' && 'Fila de espera'}
-              {order.status === 'IN_PRODUCTION' && 'Em preparação'}
-              {order.status === 'DONE' && 'Pronto!'}
+              {order.status === 'WAITING' && 'Waiting Queue'}
+              {order.status === 'IN_PRODUCTION' && 'In Preparation'}
+              {order.status === 'DONE' && 'Ready!'}
             </strong>
           </div>
         </div>
         <OrderDetails>
-          <strong>Itens</strong>
+          <strong>Items</strong>
           <div className="order-items">
             {order.products.map((product) => (
               <div key={product._id}>
@@ -116,13 +116,13 @@ export function OrderModal({
                   {order.status === 'IN_PRODUCTION' && '✅'}
                 </span>
                 <strong>
-                  {order.status === 'WAITING' && 'Iniciar Preparo'}
-                  {order.status === 'IN_PRODUCTION' && 'Pronto!'}
+                  {order.status === 'WAITING' && 'Start Preparation'}
+                  {order.status === 'IN_PRODUCTION' && 'Ready!'}
                 </strong>
               </button>
             )}
             <button type="button" className="secondary" onClick={onCancelOrder}>
-              Cancelar Pedido
+              Cancel Order
             </button>
           </Actions>
         </OrderDetails>

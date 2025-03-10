@@ -58,21 +58,21 @@ export function Orders() {
     <Container>
       <OrdersBoard
         icon={'🕒'}
-        title={'Fila de espera'}
+        title={'Waiting Queue'}
         orders={waitingOrders}
         onCancelOrder={handleCancelOrder}
         onOrderStatusChange={handleOrderStatusChange}
       />
       <OrdersBoard
         icon={'🧑‍🍳'}
-        title={'Em preparação'}
+        title={'In Preparation'}
         orders={inProductionOrders}
         onCancelOrder={handleCancelOrder}
         onOrderStatusChange={handleOrderStatusChange}
       />
       <OrdersBoard
         icon={'✅'}
-        title={'Pronto!'}
+        title={'Ready!'}
         orders={doneOrders}
         onCancelOrder={handleCancelOrder}
         onOrderStatusChange={handleOrderStatusChange}
