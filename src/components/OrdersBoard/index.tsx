@@ -47,7 +47,7 @@ export function OrdersBoard({
     setIsLoading(false);
     handleCloseOrder();
     toast.success(
-      `O pedido da mesa ${selectedOrder?.table} foi alterado para ${status}`
+      `The order for table ${selectedOrder?.table} has been changed to ${status}`
     );
   }
 
@@ -56,7 +56,7 @@ export function OrdersBoard({
     await api.delete(`/orders/${selectedOrder?._id}`);
 
     toast.success(
-      `O Pedido da mesa ${selectedOrder?.table} foi cancelado com sucesso!`
+      `The order for table ${selectedOrder?.table} has been successfully canceled!`
     );
     setIsLoading(false);
     handleCloseOrder();
@@ -85,8 +85,8 @@ export function OrdersBoard({
             key={order._id}
             onClick={() => handleOpenOrder(order)}
           >
-            <strong>Mesa {order.table}</strong>
-            <span>{order.products.length} itens </span>
+            <strong>Table {order.table}</strong>
+            <span>{order.products.length} items </span>
           </button>
         ))}
       </OrdersContainer>
